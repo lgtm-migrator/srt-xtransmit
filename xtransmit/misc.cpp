@@ -163,7 +163,7 @@ void common_run(const vector<string>& urls, const stats_config& cfg_stats, const
 		}
 	} while ((cfg_conn.reconnect || processing_pipes.size() < cfg_conn.client_conns) && !force_break);
 
-	while (processing_pipes.empty())
+	while (!processing_pipes.empty())
 	{
 		try
 		{
